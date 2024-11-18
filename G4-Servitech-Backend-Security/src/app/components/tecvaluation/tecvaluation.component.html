@@ -1,0 +1,40 @@
+<body>
+<header class="header">
+  <div class="logo">
+    <img src="assets\logo.png" alt="ServiTech Logo" class="logo">
+  </div>
+</header>
+<div class="manage-evaluations-container">
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="left-buttons">
+      <button mat-icon-button aria-label="Volver al panel" class="back-button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span class="panel-title">Valoraciones del Técnico</span>
+    </div>
+    <div class="search-filter">
+      <input matInput placeholder="Buscar comentario..." class="search-input" [(ngModel)]="searchQuery" (input)="filterEvaluations()">
+      <button mat-icon-button aria-label="Buscar" class="search-icon">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="recentFirst()">Mostrar más recientes primero</button>
+  </header>
+
+  <!-- Sección de Tarjetas de Valoración -->
+  <div class="evaluation-cards">
+    <mat-card class="evaluation-card" *ngFor="let valoracion of filteredEvaluations">
+      <mat-card-header>
+        <mat-card-subtitle>Cliente: {{ valoracion.cliente?.usuario?.username }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ valoracion.tipo }}</p>
+        <p>{{ valoracion.comentario }}</p>
+        <p><strong>Calificación:</strong> {{ valoracion.calificacion }} / 10</p>
+        <p><strong>Fecha:</strong> {{ valoracion.fecha| date: 'shortDate' }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+</body>

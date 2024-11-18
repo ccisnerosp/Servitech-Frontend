@@ -1,0 +1,40 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Menu</title>
+  <link rel="stylesheet" href="menuadmin.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <img class="logo" src="assets/logo.png" alt="Logo Servitech">
+  </div>
+  <nav>
+    <div class="auth-buttons">
+      <button [routerLink]="'/menuadmin'" class="menuadmin">Menu Admin</button>
+    </div>
+  </nav>
+</header>
+
+
+
+
+<span class="espacio"></span>
+
+<!-- =================== Main Content =================== -->
+<div class="options-container">
+  <h1>What's up, Admin!</h1>
+  <div class="button-container">
+    <button class="menu-button" routerLink="/clientes">Ver Clientes</button>
+    <button class="menu-button" routerLink="/tecnicos">Ver Técnicos</button>
+    <button class="menu-button" routerLink="/usuarios">Ver Usuarios</button>
+    <button class="menu-button" routerLink="/servicios">Ver Servicios</button>
+    <button class="menu-button" routerLink="/valoraciontecnico">Ver Valoración de Técnicos</button>
+    <button class="menu-button" routerLink="/rendimientoservicios">Ver Rendimiento de Servicios</button>
+    <button class="menu-button" (click)="openDialog()">Salir</button>
+  </div>
+</div>
+</body>
+

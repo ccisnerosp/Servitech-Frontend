@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servitech - Connecting Solutions</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="assets/logo.png" [routerLink]="'/home'" alt="Servitech Logo" class="logo">
+  </div>
+  <nav>
+    <a [routerLink]="'/services'">Services</a>
+    <a [routerLink]="'/about'">About</a>
+    <div class="auth-buttons">
+      <button [routerLink]="'/login'">Log in</button>
+      <button [routerLink]="'/signup'">Sign up</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1>Connecting solutions<br>Extending smiles.</h1>
+
+  <!-- Contenedor de búsqueda -->
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchQuery" class="search-bar" placeholder="Search">
+    <a href="#" id="search-icon-link" (click)="searchGoogle()">
+      <img src="assets/SearchLogo.png" alt="Search Icon" class="search-icon">
+    </a>
+  </div>
+
+  <p class="subheading">We offer quick and trustable solutions for all your technical problems.</p>
+</main>
+
+
+<div class="service-categories">
+  <div class="service-box">
+    <p class="service-title">Plumbing</p>
+    <img src="assets/Menu/PLUMBER.jpg" alt="Plumber Image">
+    <p class="service-description">Expert plumbers ready to fix leaks and install new pipes.</p>
+  </div>
+  <div class="service-box">
+    <p class="service-title">Carpentry</p>
+    <img src="assets/Menu/CARPINTER.jpg" alt="Carpentry Image">
+    <p class="service-description">Skilled carpenters to repair and create beautiful wooden furniture.</p>
+  </div>
+  <div class="service-box">
+    <p class="service-title">Painting</p>
+    <img src="assets/Menu/PINTOR.jpg" alt="Painting Image">
+    <p class="service-description">Professional painters to bring color to your walls and spaces.</p>
+  </div>
+  <div class="service-box">
+    <p class="service-title">Electrical Services</p>
+    <img src="assets/Menu/ELECTRICO.jpg" alt="Electrical Services Image">
+    <p class="service-description">Qualified electricians for installations and repairs.</p>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+</body>
+</html>

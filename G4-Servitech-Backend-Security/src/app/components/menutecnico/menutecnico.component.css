@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: #e8c8a3; /* Marrón Claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.logo {
+  display: flex;/* Mismo tamaño que el logo en el menú */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #52381c; /* Marrón Oscuro */
+  color: #fff;
+}
+
+.header .logo img {
+  height: 40px;
+}
+
+.menu-tecnico-container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  flex: 1;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #c59d55; /* Marrón Medio */
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sidebar h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+
+.sidebar nav ul li:hover {
+  background-color: #a48c60; /* Marrón Oscuro */
+
+}
+
+
+.sidebar nav ul li mat-icon {
+  margin-right: 10px;
+}
+
+/* Account Section */
+.account-section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+
+.account-section:hover {
+  background-color: #a48c60; /* Marrón Oscuro */
+}
+
+
+.account-section mat-icon {
+  margin-right: 10px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #f2e0c2; /* Fondo claro para contraste */
+  border-radius: 5px;
+}
+
+.content-header h1 {
+  color: #444;
+  font-size: 24px;
+}
+
+.content-header p {
+  color: #666;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+cards-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.action-card {
+  width: 100%;
+  background-color: #d2a96f; /* Amarillo Mostaza */
+  color: #444;
+  padding: 15px;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  margin-bottom: 10px;
+}
+
+
+.action-card:hover {
+  transform: scale(0.85);
+}
+
+
+.card-icon {
+  font-size: 24px;
+  color: #444;
+  margin-right: 10px;
+
+}
+
+mat-card-header mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #52381c; /* Marrón Oscuro */
+  color: #fff;
+}

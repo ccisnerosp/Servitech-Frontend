@@ -1,0 +1,48 @@
+/* General dialog styling */
+mat-dialog-content {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Title styling */
+h2[mat-dialog-title] {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #5b4636; /* Darker brown matching your design */
+  margin-bottom: 20px;
+}
+
+/* Styling the buttons */
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button[mat-raised-button] {
+  background-color: #e0a52d; /* Matching the yellow button background */
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+/* Add hover effect for buttons */
+button[mat-raised-button]:hover {
+  background-color: #d19324; /* Slightly darker yellow on hover */
+}
+
+/* Focused initial button (Sí) */
+button[cdkFocusInitial] {
+  border: 2px solid #d19324; /* Add a border for focus */
+}
+
+/* Optional: Make the dialog itself rounded and add padding */
+.mat-dialog-container {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fdfdfd; /* White background */
+}

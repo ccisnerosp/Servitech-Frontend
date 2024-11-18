@@ -1,0 +1,260 @@
+/* Reset de márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura que el body y el HTML ocupen el 100% del alto de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #D7B893;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Alineación a la derecha */
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3C2E24;
+  padding: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Header, que se ajusta en la parte superior */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #4E382B;
+}
+
+.logo {
+  width: 130px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right p {
+  margin-right: 20px;
+  color: white;
+}
+
+.header-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color:#D7B893;;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 12px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* El contenedor principal del login */
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[type="text"], input[type="username"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Contenedor de la contraseña con botón de visibilidad */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+  width: 100%;
+}
+
+/* Botón de visibilidad de la contraseña */
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Alineación a la derecha */
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3C2E24;
+  padding: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= MODIFICACIONES BOTONES LOGIN ================= */
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3C2E24;
+  color: white;
+  border: 2px solid #3C2E24;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  color: #CFA049;
+  border-color: #CFA049;
+}
+button.login {
+  width: 100%;
+  padding: 10px;
+  background-color: #3C2E24;
+  color: white;
+  border: 2px solid #3C2E24;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.login:hover {
+  background-color: #CFA049; /* Cambia el fondo en hover */
+  color: #3C2E24; /* Cambia el color del texto en hover */
+  border-color: #CFA049; /* Mantiene el borde del mismo color en hover */
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+a {
+  color: #4E382B;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+.forgot {
+  margin-left: auto;
+  font-size: 12px;
+  margin-right: 49px;
+}
+.input{
+  font-size: 11px;
+}
+.google-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.google-btn:hover {
+  background-color: #493b31;
+  color: #fbfbfb;
+}
+
+/* Pie de página centrado */
+footer {
+  background-color: #8B6E4D;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-text {
+  color: white;
+  font-size: 16px;
+}

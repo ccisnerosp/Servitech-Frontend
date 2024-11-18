@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Usuarios</title>
+  <link rel="stylesheet" href="usuarios.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- =================== Header =================== -->
+<header>
+  <div class="header-left">
+    <img class="logo" src="assets/logo.png" alt="Logo Servitech">
+  </div>
+  <nav>
+    <div class="auth-buttons">
+      <button [routerLink]="'/menuadmin'" class="menuadmin">Menu Admin</button>
+      <button [routerLink]="'/account'" class="account-option">My Account</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Tabla de Usuarios -->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th class="fila" mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Nombres Column -->
+    <ng-container matColumnDef="nombres">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
+    </ng-container>
+
+    <!-- Apellidos Column -->
+    <ng-container matColumnDef="apellidos">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+    </ng-container>
+
+    <!-- Dirección Column -->
+    <ng-container matColumnDef="direccion">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+
+    <!-- Teléfono Column -->
+    <ng-container matColumnDef="telefono">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <!-- Correo Column -->
+    <ng-container matColumnDef="correo">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Correo </th>
+      <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+    </ng-container>
+
+    <!-- Password Column -->
+    <ng-container matColumnDef="password">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
+      <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+    </ng-container>
+
+    <!-- Eliminado Column -->
+    <ng-container matColumnDef="eliminado">
+      <th class="fila" mat-header-cell *matHeaderCellDef mat-sort-header> Eliminado </th>
+      <td mat-cell *matCellDef="let element"> {{element.eliminado}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+</body>
+<footer>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
+</footer>
+</html>

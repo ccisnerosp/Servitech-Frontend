@@ -1,0 +1,140 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2E24;
+  padding: 1rem;
+}
+body {
+  background-color: #e8c8a3; /* Marrón Claro */
+  flex-direction: column;
+  min-height: 100vh;
+}
+.logo {
+  height: 60px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Añadido z-index alto */
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+/* Contenedor principal */
+.left-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  margin-right: 0.5rem;
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f2e0c2;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo de las tarjetas */
+.card-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+mat-card-header button {
+  margin-left: auto;
+}
+.card-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo del encabezado */
+mat-card-header {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Título de las tarjetas */
+mat-card-title {
+  font-size: 1.4rem;
+  color: #444;
+  font-weight: bold;
+}
+
+/* Contenedores de información */
+.tech-info, .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+/* Fila de información */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+/* Etiquetas */
+.label {
+  font-weight: 600;
+  color: #555;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* Valores */
+.info-row span:not(.label) {
+  flex: 2;
+  text-align: left;
+  color: #333;
+  font-size: 1rem;
+}

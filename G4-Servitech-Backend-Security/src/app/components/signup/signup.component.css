@@ -1,0 +1,224 @@
+/* Reset de márgenes y padding en todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* Asegura que el body y el HTML ocupen el 100% del alto de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #D7B893;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Esto asegura que el body ocupe el 100% de la altura de la ventana del navegador */
+  justify-content: space-between; /* Asegura que el contenido esté distribuido en la pantalla */
+}
+
+/* Header: Contenedor del logo y botones de autenticación */
+header {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a los extremos del header */
+  align-items: center;
+  padding: 20px;
+  background-color: #4E382B; /* Color de fondo del header */
+}
+
+/* Estilo del logo en el header */
+.logo {
+  width: 150px; /* Ancho del logo */
+}
+
+/* Contenedor de los botones en el lado derecho del header */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo del texto dentro del header derecho */
+.header-right p {
+  margin-right: 20px;
+  color: white;
+}
+
+/* Estilo de los enlaces dentro del header (como el botón de Log in) */
+.header-right a {
+  color: white; /* Color del texto del enlace */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold; /* Negrita */
+}
+
+/*BUTTON: Estilos del enlace de Log in */
+.login-link {
+  display: inline-block; /* Para que se comporte como un botón */
+  padding: 10px 20px; /* Tamaño del botón */
+  border: 2px solid white; /* Borde blanco */
+  border-radius: 30px; /* Bordes circulares */
+  color: white; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+/*BUTTON HOVER: Efecto hover en el botón de Log in */
+.login-link:hover {
+  background-color: white; /* Fondo blanco al hacer hover */
+  color: #4E382B; /* Cambia el color del texto al pasar el ratón */
+}
+
+/*MAIN: Contenedor principal del formulario de login */
+main {
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  background-color: #D7B893;
+}
+
+/*FORM: Contenedor del formulario de login */
+.login-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: white; /* Fondo blanco del formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1); /* Sombra del formulario */
+  text-align: center; /* Centra el texto dentro del formulario */
+}
+
+/* Título del formulario de login */
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px; /* Tamaño de la fuente del título */
+}
+
+/* Campos de texto dentro del formulario (Nombre, Email, Contraseña) */
+input[type="text"], input[type="email"], input[type="password"], input[type="username"], input[type="address"], input[type="tel"] {
+  width: 100%; /* Ocupan todo el ancho disponible */
+  padding: 10px;
+  margin: 10px 0; /* Espaciado entre los campos */
+  border: 1px solid #ccc; /* Borde de los campos */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* FORM: Estilo para los campos de nombre (First name, Last name) */
+.name-fields {
+  display: flex;
+  justify-content: space-between; /* Los coloca lado a lado */
+}
+
+/* Campos de texto de nombres (First name y Last name) */
+.name-fields input[type="text"] {
+  width: 48%; /* Ocupan un 48% cada uno para estar uno al lado del otro */
+}
+
+/*BUTTON: Estilos del botón principal de submit */
+button {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 10px;
+  background-color: #4E382B; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-top: 20px;
+}
+
+/*BUTTON HOVER: Efecto hover para el botón */
+button:hover {
+  background-color: #3C2E24; /* Color del fondo cambia al hacer hover */
+}
+
+/* Divider (separador horizontal) entre el botón de login y el de Google */
+.divider {
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Botón de Google login */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+/* Imagen del logo de Google dentro del botón */
+.google-btn img {
+  width: 20px;
+  margin-right: 10px; /* Espaciado entre el logo y el texto */
+}
+
+/* Footer: Contenedor de pie de página */
+footer {
+  background-color: #8B6E4D; /* Color de fondo del footer */
+  text-align: center; /* Texto centrado */
+  padding: 20px;
+
+}
+
+/* Estilo del texto dentro del footer */
+.footer-text {
+  color: white; /* Color del texto del footer */
+  font-size: 16px;
+}
+
+/* === RESPONSIVIDAD === */
+
+/* Para pantallas de tamaño pequeño (móviles) */
+@media (max-width: 600px) {
+  /* FORM RESPONSIVE: Ajusta el tamaño del contenedor del formulario en móviles */
+  .login-container {
+    max-width: 90%; /* Se reduce el ancho del formulario para pantallas pequeñas */
+    padding: 20px;  /* Menos padding en móviles */
+  }
+
+  /* FORM RESPONSIVE: Los campos de nombre se apilan verticalmente en móviles */
+  .name-fields {
+    flex-direction: column; /* Cambia los campos de nombre a una sola columna */
+  }
+
+  .name-fields input[type="text"] {
+    width: 100%; /* Ocupan el 100% del ancho en pantallas pequeñas */
+    margin: 5px 0; /* Reduce el espacio entre los campos de texto */
+  }
+
+  /* TEXT RESPONSIVE: Ajusta el tamaño del título en pantallas pequeñas */
+  h1 {
+    font-size: 24px; /* Reduce el tamaño del título en móviles */
+  }
+
+  /* BUTTON RESPONSIVE: Ajusta el tamaño del padding en los botones en móviles */
+  button {
+    padding: 12px; /* Aumenta el padding de los botones en móviles */
+  }
+
+  /* FOOTER RESPONSIVE: Ajusta el tamaño del texto del footer en móviles */
+  .footer-text {
+    font-size: 14px; /* Reduce el tamaño del texto en el footer */
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 900px) {
+  /* FORM RESPONSIVE: Ajusta el tamaño del formulario en pantallas medianas */
+  .login-container {
+    max-width: 80%; /* Ajusta el ancho del formulario en pantallas medianas */
+  }
+
+  /* TEXT RESPONSIVE: Ajusta el tamaño del título en pantallas medianas */
+  h1 {
+    font-size: 28px; /* Ajusta el tamaño del título en pantallas medianas */
+  }
+
+  /* FORM RESPONSIVE: Ajusta el tamaño de los campos de texto en tablets */
+  .name-fields input[type="text"] {
+    width: 48%; /* Mantiene los campos de nombre lado a lado, pero más pequeños */
+  }
+}

@@ -1,0 +1,38 @@
+<body>
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(clienteId)" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(clienteId)">Account</button>
+      <button (click)="goToMyRequests(clienteId)">Requests</button>
+      <button (click)="goToMyRatings(clienteId)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="requests-container">
+  <h2 class="title">Mis Solicitudes</h2>
+  <button mat-raised-button color="primary" (click)="toggleSort()">
+    {{ sortByRecent ? 'Mostrar más antiguas primero' : 'Mostrar más recientes primero' }}
+  </button>
+
+  <div class="requests-list">
+    <div *ngFor="let solicitud of solicitudes" class="request-card">
+      <h3>{{ solicitud.servicio?.nombre }}</h3>
+      <p>Fecha: {{ solicitud.fechaSolicitud | date: 'shortDate' }}</p>
+      <p>Estado: {{ solicitud.estado }}</p>
+      <p>Técnico: {{ solicitud.servicio?.tecnico?.usuario?.username }}</p>
+      <button
+        *ngIf="solicitud.estado === 'Pendiente'"
+        mat-button
+        color="warn"
+        (click)="cancelarSolicitud(solicitud.id)"
+      >
+        Cancelar Solicitud
+      </button>
+    </div>
+  </div>
+</div>
+</body>

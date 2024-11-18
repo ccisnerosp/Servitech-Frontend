@@ -1,0 +1,81 @@
+/* General container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5a4030;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  height: 50px;
+}
+
+.login-prompt {
+  font-size: 1rem;
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Main content styling */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: #e2b38b;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background-color: #5a4030;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.back-btn:hover {
+  background-color: #7b502a;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #5a4030;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1rem;
+}

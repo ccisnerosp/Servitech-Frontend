@@ -1,0 +1,87 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Técnico - ServiTech</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="assets\logo.png" alt="ServiTech Logo" class="logo">
+    </div>
+  </header>
+  <div class="menu-tecnico-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Panel del Técnico</h2>
+    <nav>
+      <ul>
+        <li (click)="navigateToTecServiceRequests()">
+          <mat-icon>assignment</mat-icon>
+          <span>Ver Solicitudes</span>
+        </li>
+        <li (click)="navigateToTecValuation()">
+          <mat-icon>grade</mat-icon>
+          <span>Ver Valoraciones</span>
+        </li>
+        <li (click)="navigateToTecServices()">
+          <mat-icon>construction</mat-icon>
+          <span>Gestionar Servicios</span>
+        </li>
+        <div class="account-section" (click)="navigateToTecProfile()">
+          <mat-icon>person</mat-icon>
+          <span>Mi Cuenta</span>
+        </div>
+        <div class="account-section"(click)= "openDialog()">
+          <mat-icon>person</mat-icon>
+          <span>Cerrar Sesión</span>
+        </div>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <header class="content-header">
+      <h1>Bienvenido, {{ tecnico?.usuario?.nombres }}</h1>
+      <p>Accede y gestiona tus solicitudes y valoraciones.</p>
+    </header>
+
+    <section class="cards-container">
+      <mat-card class="action-card" (click)="navigateToTecServiceRequests()">
+        <mat-card-header>
+          <mat-icon class="card-icon">assignment</mat-icon>
+          <mat-card-title>Ver Solicitudes</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Revisa todas tus solicitudes pendientes y completadas.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="action-card" (click)="navigateToTecValuation()">
+        <mat-card-header>
+          <mat-icon class="card-icon">grade</mat-icon>
+          <mat-card-title>Ver Valoraciones</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Consulta las valoraciones que has recibido de los clientes.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="action-card" (click)="navigateToTecServices()">
+        <mat-card-header>
+          <mat-icon class="card-icon">construction</mat-icon>
+          <mat-card-title>Gestionar Servicios</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Añade, edita o elimina los servicios que ofreces.</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </main>
+</div>
+  <footer class="footer">
+    <p>Tus servicios siempre son importantes. No lo olvides.</p>
+  </footer>
+</body>

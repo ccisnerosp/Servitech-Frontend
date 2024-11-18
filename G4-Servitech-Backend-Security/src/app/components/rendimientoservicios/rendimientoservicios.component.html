@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Menu</title>
+  <link rel="stylesheet" href="rendimientoservicios.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  <div class="header-left">
+    <img class="logo" src="assets/logo.png" alt="Logo Servitech">
+  </div>
+  <nav>
+    <div class="auth-buttons">
+      <button [routerLink]="'/menuadmin'" class="menuadmin">Menu Admin</button>
+      <button [routerLink]="'/account'" class="account-option">My Account</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <form [formGroup]="fechaForm" class="date-form">
+    <mat-form-field>
+      <mat-label>Fecha Inicio</mat-label>
+      <input formControlName="fechaInicio" matInput [matDatepicker]="picker" required>
+      <mat-hint>YYYY/MM/DD</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha Fin</mat-label>
+      <input formControlName="fechaFin" matInput [matDatepicker]="picker2" required>
+      <mat-hint>YYYY/MM/DD</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" (click)="onConsultarRendimiento()">Consultar</button>
+  </form>
+
+  <table mat-table [dataSource]="serviciosData" class="mat-elevation-z8">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre del Servicio </th>
+      <td mat-cell *matCellDef="let servicio"> {{ servicio.nombre }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let servicio"> {{ servicio.cantidad }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="monto">
+      <th mat-header-cell *matHeaderCellDef> Monto </th>
+      <td mat-cell *matCellDef="let servicio"> {{ servicio.monto}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+</body>
+
+

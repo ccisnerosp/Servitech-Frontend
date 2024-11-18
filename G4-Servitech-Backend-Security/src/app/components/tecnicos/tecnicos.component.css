@@ -1,0 +1,139 @@
+/* =================== Global Styles =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* La página ocupa al menos toda la altura de la ventana */
+  font-family: 'Montserrat', sans-serif;
+  background-color: #E5C199;
+  color: #3C2E24;
+  margin: 0;
+}
+/* =================== Main Content =================== */
+main {
+  flex: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+}
+
+
+/* ========== HEADER ========== */
+header {
+  background-color: #3C2E24;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+
+header .logo {
+  width: 100px; /* Tamaño del logo reducido */
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* Espaciado uniforme entre los elementos de navegación */
+  margin-right: 20px;
+}
+
+header nav a,
+.auth-buttons button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 8px 15px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+header nav a:hover,
+.auth-buttons button:hover {
+  background-color: #CFA049; /* Color de hover */
+  color: #3C2E24; /* Cambia el color del texto para mayor contraste */
+  border-color: #CFA049; /* Cambia el borde para que coincida con el color de fondo en hover */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* =================== Tabla de Clientes =================== */
+.mat-elevation-z8 {
+  background-color: #2b210d; /* Fondo de la tabla en blanco */
+  padding: 7px; /* Reduce el padding alrededor de la tabla */
+  margin: 20px auto;
+  width: 90%;
+  border-radius: 10px;
+
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Colapsa los bordes para una apariencia más compacta */
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+  color: #3C2E24;
+
+  border: 1px solid #000000; /* Borde más pequeño y claro para las celdas */
+}
+
+th {
+  background-color: #fbfbfb; /* Fondo de los encabezados en blanco */
+  font-weight: 500;
+}
+
+td {
+  background-color: #FFFFFF; /* Fondo de las celdas en blanco */
+}
+
+tr:nth-child(even) td {
+  background-color: #F9F9F9; /* Fondo ligeramente distinto en filas pares para mejorar la legibilidad */
+}
+
+/* =================== Footer =================== */
+footer {
+  background-color: #E5C199;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.mat-paginator {
+  color: #0c0c0c;
+  border: 15px solid #000000; ;
+  background-color: #000000;
+}
+
+/* =================== Responsiveness =================== */
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+  }
+
+  .menuadmin, .account-option {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+

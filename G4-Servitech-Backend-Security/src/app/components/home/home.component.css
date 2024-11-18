@@ -1,0 +1,296 @@
+/* ========== BODY ========== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E5C199;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========== HEADER ========== */
+header {
+  background-color: #3C2E24;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+
+header .logo {
+  width: 100px; /* Tamaño del logo reducido */
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* Espaciado uniforme entre los elementos de navegación */
+}
+
+header nav a,
+.auth-buttons button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 5px 15px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+header nav a:hover,
+.auth-buttons button:hover {
+  background-color: #CFA049; /* Color de hover */
+  color: #3C2E24; /* Cambia el color del texto para mayor contraste */
+  border-color: #CFA049; /* Cambia el borde para que coincida con el color de fondo en hover */
+}
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+/* ========== MAIN CONTENT ========== */
+main {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ========== SEARCH CONTAINER ========== */
+.search-container {
+  margin: 20px auto;
+  width: 60%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  border-color: #000000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-bar {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px;
+  outline: none;
+}
+
+#search-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-icon-link:hover {
+  background-color: #f0f0f0;
+}
+
+.search-icon {
+  width: 24px; /* Ajusta el tamaño de la imagen */
+  height: 24px;
+}
+/* ========== TITLES FOR SERVICE CATEGORIES ========== */
+.service-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* ========== IMAGES FOR SERVICE CATEGORIES ========== */
+.service-box img {
+  width: 150px; /* Ajusta el tamaño de las imágenes */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+/* ========== SERVICE CATEGORIES ========== */
+.service-categories {
+  display: flex;
+  justify-content: center;
+  background-color: #8C6B48;
+  padding: 20px 0;
+  border-radius: 0;
+  margin-bottom: 20px; /* Espacio adicional debajo de la categoría de servicios */
+}
+
+.service-box {
+  background-color: #CFA049;
+  margin: 0 10px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 25px;
+  flex: 1;
+  color: white;
+}
+
+.service-box i {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el texto descriptivo de cada servicio */
+.service-description {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 5px;
+}
+
+
+
+/* ========== FOOTER STYLE ========== */
+/* Añade un margen en la parte superior del footer */
+footer {
+  background-color: #3C2E24;
+  color: #E5C199;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px; /* Espacio entre servicios y footer */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  font-weight: normal; /* Título sin negrita */
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Dos columnas */
+  gap: 5px 20px; /* Ajuste del espacio entre las columnas */
+  font-family: 'Montserrat', sans-serif; /* Fuente para los enlaces de redes sociales */
+  justify-content: center; /* Centra el contenido */
+}
+
+.footer-icons a {
+  color: #FFFFFF;
+  font-size: 1rem; /* Tamaño de fuente similar a la fecha de creación */
+  transition: color 0.3s;
+  text-align: center;
+  position: relative;
+}
+
+
+.footer-icons a:hover {
+  color: #CFA049; /* Color de hover para los iconos */
+}
+
+.footer-bottom {
+  border-top: 1px solid #FFFFFF;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Separación entre enlaces y copyright */
+}
+
+.footer-bottom a {
+  color: #FFFFFF; /* Color blanco para enlaces de Políticas y Términos */
+}
+
+
+
+
+
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .service-categories {
+    flex-direction: column;
+  }
+
+  .service-box {
+    margin: 10px 0;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav a,
+  .auth-buttons button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  main h1 {
+    font-size: 1.2rem;
+  }
+
+  .service-box {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+

@@ -1,0 +1,42 @@
+<body>
+<header class="header">
+  <div class="logo">
+    <img src="assets\logo.png" alt="ServiTech Logo" class="logo">
+  </div>
+</header>
+<div class="manage-services-container">
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="left-buttons">
+      <button mat-icon-button aria-label="Volver al panel" class="back-button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span class="panel-title">Solicitudes de Servicio</span>
+      <button mat-raised-button color="primary" (click)="recentFirst()">Mostrar más recientes primero</button>
+    </div>
+  </header>
+
+  <!-- Sección de Tarjetas de Solicitud -->
+  <div class="service-cards">
+    <mat-card class="service-card" *ngFor="let solicitud of filteredRequests">
+      <mat-card-header>
+        <mat-card-title>{{ solicitud.servicio?.nombre }}</mat-card-title>
+        <mat-card-subtitle>Cliente: {{ solicitud.cliente.usuario.username }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Fecha de Solicitud:</strong> {{ solicitud.fechaSolicitud}}</p>
+        <p><strong>Descripción:</strong> {{ solicitud.descripcionProblema }}</p>
+        <p><strong>Estado:</strong> <span [ngClass]="{'active': solicitud.estado == 'Activo', 'inactive': solicitud.estado !== 'Activo'}">{{ solicitud.estado }}</span></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="primary" (click)="procesarSolicitud(solicitud.id)">
+          <mat-icon>schedule</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="terminarSolicitud(solicitud.id)">
+          <mat-icon>check</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</body>

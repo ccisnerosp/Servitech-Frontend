@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Menu</title>
+  <link rel="stylesheet" href="valoraciontecnico.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  <div class="header-left">
+    <img class="logo" src="assets/logo.png" alt="Logo Servitech">
+  </div>
+  <nav>
+    <div class="auth-buttons">
+      <button [routerLink]="'/menuadmin'" class="menuadmin">Menu Admin</button>
+      <button [routerLink]="'/account'" class="account-option">My Account</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
+  <!-- Nombre Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+    <td mat-cell *matCellDef="let tecnico"> {{ tecnico.nombre }} </td>
+  </ng-container>
+
+  <!-- Apellido Column -->
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+    <td mat-cell *matCellDef="let tecnico"> {{ tecnico.apellido }} </td>
+  </ng-container>
+
+  <!-- Solicitudes Column -->
+  <ng-container matColumnDef="solicitudes">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Solicitudes </th>
+    <td mat-cell *matCellDef="let tecnico"> {{ tecnico.solicitudes }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['nombre', 'apellido', 'solicitudes']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['nombre', 'apellido', 'solicitudes'];"></tr>
+</table>
+
+</body>
+
+
+
+<footer>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</footer>

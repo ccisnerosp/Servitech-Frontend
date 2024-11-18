@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servitech - About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="about.component.css">
+</head>
+<body>
+
+<!-- =================== Header =================== -->
+<header>
+  <div class="header-left">
+    <img src="assets/logo.png" [routerLink]="'/home'" alt="Servitech Logo" class="logo">
+  </div>
+  <nav>
+    <div class="auth-buttons">
+      <button [routerLink]="'/login'">Log in</button>
+      <button [routerLink]="'/signup'">Sign up</button>
+    </div>
+  </nav>
+</header>
+
+<!-- =================== Main Content =================== -->
+<main>
+  <section class="about-section">
+    <h1>About Us</h1>
+    <p>At Servitech, we connect solutions to your technical problems with ease and efficiency. Our team is dedicated to providing reliable and high-quality service across a variety of fields. Join thousands of customers who trust us to solve their challenges quickly and professionally.</p>
+    <p>Founded in 2023, Servitech has been focused on bridging the gap between skilled technicians and customers, ensuring satisfaction through personalized solutions.</p>
+  </section>
+</main>
+
+<!-- =================== Footer =================== -->
+<footer>
+  <p class="footer-text">© 2023 Servitech - Connecting Solutions</p>
+  <p class="footer-links">
+    <a href="link_to_privacy_policy">Privacy Policy</a> |
+    <a href="link_to_terms_of_service">Terms of Service</a>
+  </p>
+</footer>
+
+</body>
+</html>

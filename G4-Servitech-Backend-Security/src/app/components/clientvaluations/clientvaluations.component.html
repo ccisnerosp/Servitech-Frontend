@@ -1,0 +1,87 @@
+<body>
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(clienteId)" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(clienteId)">Account</button>
+      <button (click)="goToMyRequests(clienteId)">Requests</button>
+      <button (click)="goToMyRatings(clienteId)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Lado izquierdo -->
+  <div class="form-container">
+    <h2>Insertar Valoración</h2>
+    <form [formGroup]="valoracionForm" (ngSubmit)="createValoracion()">
+      <mat-form-field appearance="fill">
+        <mat-label>Comentario</mat-label>
+        <textarea matInput formControlName="comentario"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo">
+          <mat-option value="Reseña">Reseña</mat-option>
+          <mat-option value="Queja/Denuncia">Queja/Denuncia</mat-option>
+          <mat-option value="Sugerencia">Sugerencia</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Calificación</mat-label>
+        <input type="number" matInput formControlName="calificacion" min="1" max="10" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Solicitud</mat-label>
+        <mat-select formControlName="solicitudSeleccionada">
+          <mat-option *ngFor="let solicitud of solicitudes" [value]="{ tecnicoId: solicitud.servicio?.tecnico?.id }">
+            {{ solicitud.servicio?.tecnico?.usuario?.username }} - {{ solicitud.servicio?.nombre }} - {{ solicitud.fechaSolicitud | date: 'shortDate' }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!valoracionForm.valid">Crear Valoración</button>
+    </form>
+  </div>
+
+  <!-- Lado derecho -->
+  <div class="valuations-container">
+    <h2>Mis Valoraciones</h2>
+    <div *ngFor="let valoracion of valoraciones; let i = index" class="valuation-card">
+      <div *ngIf="editingIndex === i; else viewMode">
+        <mat-form-field appearance="fill">
+          <mat-label>Comentario</mat-label>
+          <textarea matInput [(ngModel)]="valoracion.comentario"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo</mat-label>
+          <mat-select [(ngModel)]="valoracion.tipo">
+            <mat-option value="Reseña">Reseña</mat-option>
+            <mat-option value="Queja/Denuncia">Queja/Denuncia</mat-option>
+            <mat-option value="Sugerencia">Sugerencia</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Calificación</mat-label>
+          <input type="number" matInput [(ngModel)]="valoracion.calificacion" min="1" max="10" />
+        </mat-form-field>
+        <button mat-button color="primary" (click)="updateValoracion(i)">Guardar</button>
+        <button mat-button color="warn" (click)="cancelEdit()">Cancelar</button>
+      </div>
+      <ng-template #viewMode>
+        <p><strong>Comentario:</strong> {{ valoracion.comentario }}</p>
+        <p><strong>Tipo:</strong> {{ valoracion.tipo }}</p>
+        <p><strong>Calificación:</strong> {{ valoracion.calificacion }}</p>
+        <p><strong>Fecha:</strong> {{ valoracion.fecha | date: 'shortDate' }}</p>
+        <button mat-button color="accent" (click)="enableEdit(i)">Editar</button>
+        <button mat-button color="warn" (click)="deleteValoracion(valoracion.id)">Eliminar</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+</body>
+<footer class="footer">
+  <p>Únete a los 100,000 usuarios que confían en ServiTech para resolver sus problemas técnicos.</p>
+</footer>

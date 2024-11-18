@@ -1,0 +1,70 @@
+<body>
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(cliente?.id)" alt="Logo" class="logo">
+  <input type="text" class="search-bar" placeholder="Search services" [(ngModel)]="searchQuery" (input)="filterBySearch()" />
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(cliente?.id)">Account</button>
+      <button (click)="goToMyRequests(cliente?.id)">Requests</button>
+      <button (click)="goToMyRatings(cliente?.id)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="main-container">
+  <aside class="sidebar">
+    <h3>Filters</h3>
+    <mat-form-field>
+      <mat-select placeholder="Service Type" [(ngModel)]="serviceType" (selectionChange)="filterByType()">
+        <mat-option *ngFor="let type of serviceTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+             type="number"
+             placeholder="Min Rating"
+             [(ngModel)]="minRating"
+             (input)="filterByRating()" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="sortHigherPrice()">Sort by higher price</button>
+    <button mat-raised-button color="primary" (click)="sortLowerPrice()">Sort by lower price</button>
+    <button mat-raised-button color="primary" (click)="resetFilters()">Reset Filter</button>
+  </aside>
+
+  <div class="services-container">
+    <mat-card *ngFor="let servicio of filteredServicios" class="service-card">
+      <mat-card-header>
+        <div class="user-info">
+          <mat-icon class="user-icon1">person</mat-icon>
+          <button mat-button class="username" (click)="viewTecProfile(servicio.tecnico?.id)">
+            {{ servicio.tecnico?.usuario?.username }}
+          </button>
+        </div>
+        <mat-card-title>{{ servicio.nombre }}</mat-card-title>
+        <div>
+          <mat-icon class="star-icon">star</mat-icon>
+          {{ valoraciones[servicio.tecnico?.id!]?.promedio || 'N/A' }}
+          ({{ valoraciones[servicio.tecnico?.id!]?.cantidad || 0 }})
+        </div>
+        <mat-card-subtitle>{{ servicio.tipo }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ servicio.descripcion }}</p>
+        <p><strong>Costo:</strong> {{ servicio.costo }}</p>
+        <p><strong>Estado:</strong> {{ servicio.estado }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="requestService(servicio.id)">
+          Request Now
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+</body>
+<footer class="footer">
+  <p>Encuentra todo tipo de soluciones a tus problemas. </p>
+</footer>

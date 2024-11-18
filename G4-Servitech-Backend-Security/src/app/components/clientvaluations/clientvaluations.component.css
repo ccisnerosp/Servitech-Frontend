@@ -1,0 +1,122 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2E24;
+  padding: 1rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.user-icon1 {
+  font-size: 30px;
+  color: #444;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Añadido z-index alto */
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+/* Fondo del cuerpo */
+body {
+  background-color: #e8c8a3;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+
+}
+
+/* Lado izquierdo */
+.form-container {
+  flex: 1;
+  background-color: #cca868;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Lado derecho */
+.valuations-container {
+  flex: 2.4;
+  text-align: center;
+}
+
+.valuations-container h2 {
+  margin-bottom: 20px;
+  color: #3c2e24;
+}
+
+/* Tarjetas de valoraciones */
+.valuation-card {
+  background-color: #f5f5f5;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Botones en acciones */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #52381c; /* Marrón Oscuro */
+  color: #fff;
+}
+

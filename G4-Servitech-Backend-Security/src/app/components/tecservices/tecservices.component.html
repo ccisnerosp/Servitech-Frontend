@@ -1,0 +1,147 @@
+<body>
+<!-- Encabezado -->
+<app-header></app-header>
+
+<div class="manage-services-container">
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="left-buttons">
+      <button mat-icon-button aria-label="Volver al panel" class="back-button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span class="panel-title">Gestionar Servicios</span>
+    </div>
+
+    <button mat-raised-button color="primary" class="add-service-btn" (click)="createService()">
+      Añadir Nuevo Servicio
+    </button>
+
+    <div class="search-filter">
+      <input
+        matInput
+        placeholder="Buscar servicio..."
+        class="search-input"
+        [(ngModel)]="searchQuery"
+        (input)="filterServices()"
+      />
+      <button mat-icon-button aria-label="Buscar" class="search-icon">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sección de Tarjetas de Servicio -->
+  <div class="service-cards">
+    <mat-card
+      class="service-card"
+      *ngFor="let servicio of filteredServicios"
+      [ngClass]="{ 'edit-mode': servicio.editMode }"
+    >
+      <mat-card-header>
+        <mat-card-title>
+            <span *ngIf="!servicio.editMode" class="service-title">
+              {{ servicio.nombre }}
+            </span>
+          <input
+            *ngIf="servicio.editMode"
+            matInput
+            [(ngModel)]="servicio.nombre"
+            placeholder="Nombre del servicio"
+            class="edit-input"
+          />
+        </mat-card-title>
+        <mat-card-subtitle class="service-subtitle">
+          <!-- Modo no edición -->
+          <span *ngIf="!servicio.editMode" class="service-type">
+              Tipo: {{ servicio.tipo || '(Tipo)' }}
+            </span>
+
+          <!-- Modo edición -->
+          <select
+            *ngIf="servicio.editMode"
+            matInput
+            [(ngModel)]="servicio.tipo"
+            class="edit-select"
+          >
+            <!-- Opción por defecto -->
+            <option [ngValue]="''" disabled selected>Tipo</option>
+            <option [ngValue]="'Construcción'">Construcción</option>
+            <option [ngValue]="'Tecnología'">Tecnología</option>
+            <option [ngValue]="'Plomería'">Plomería</option>
+            <option [ngValue]="'Jardinería'">Jardinería</option>
+            <option [ngValue]="'Electricidad'">Electricidad</option>
+            <option [ngValue]="'Gasfitería'">Gasfitería</option>
+            <option [ngValue]="'Carpintería'">Carpintería</option>
+          </select>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="service-section">
+          <strong>Descripción:</strong>
+          <span *ngIf="!servicio.editMode">{{ servicio.descripcion }}</span>
+          <textarea
+            *ngIf="servicio.editMode"
+            matInput
+            [(ngModel)]="servicio.descripcion"
+            placeholder="Descripción"
+            class="edit-textarea"
+          ></textarea>
+        </div>
+
+        <div class="service-section">
+          <strong>Costo:</strong>
+          <span *ngIf="!servicio.editMode">${{ servicio.costo }}</span>
+          <input
+            *ngIf="servicio.editMode"
+            matInput
+            [(ngModel)]="servicio.costo"
+            type="number"
+            placeholder="Costo"
+            class="edit-input"
+          />
+        </div>
+
+        <div class="service-status">
+            <span
+              class="status"
+              *ngIf="!servicio.editMode"
+              [ngClass]="{
+                active: servicio.estado === 'Disponible',
+                inactive: servicio.estado !== 'Disponible'
+              }"
+            >
+              {{ servicio.estado }}
+            </span>
+          <select
+            *ngIf="servicio.editMode"
+            matInput
+            [(ngModel)]="servicio.estado"
+            class="edit-select"
+          >
+            <option value="Disponible">Disponible</option>
+            <option value="No Disponible">No Disponible</option>
+          </select>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions class="service-actions">
+        <button mat-icon-button color="primary" (click)="toggleEdit(servicio)">
+          <mat-icon>{{ servicio.editMode ? 'save' : 'edit' }}</mat-icon>
+        </button>
+        <button
+          *ngIf="servicio.editMode"
+          mat-icon-button
+          color="warn"
+          (click)="cancelEdit(servicio)"
+        >
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteService(servicio)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</body>

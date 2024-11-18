@@ -1,0 +1,121 @@
+/* =================== Global Styles =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E5C199; /* Fondo del cuerpo */
+  color: #3C2E24; /* Color del texto principal */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: #3C2E24;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+
+header .logo {
+  width: 100px; /* Tamaño del logo reducido */
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* Espaciado uniforme entre los elementos de navegación */
+  margin-right: 20px;
+}
+
+header nav a,
+.auth-buttons button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 8px 15px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+header nav a:hover,
+.auth-buttons button:hover {
+  background-color: #CFA049; /* Color de hover */
+  color: #3C2E24; /* Cambia el color del texto para mayor contraste */
+  border-color: #CFA049; /* Cambia el borde para que coincida con el color de fondo en hover */
+}
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* =================== Main Content =================== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.about-section {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* =================== Footer =================== */
+footer {
+  background-color: #3C2E24;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* =================== Responsiveness =================== */
+@media (max-width: 600px) {
+  .about-section h1 {
+    font-size: 2rem;
+  }
+  .about-section p {
+    font-size: 1rem;
+  }
+}

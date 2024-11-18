@@ -1,0 +1,148 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2E24;
+  padding: 1rem;
+}
+body {
+  background-color: #e8c8a3; /* Marrón Claro */
+  flex-direction: column;
+  min-height: 100vh;
+}
+.logo {
+  height: 60px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon1 {
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Añadido z-index alto */
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+.profile-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 16px;
+  background-color: #cca868; /* Marrón Medio */
+  border-right: 1px solid #ddd;
+}
+
+.user-icon2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 37px;
+
+}
+
+.technician-info {
+  margin-top: 5px;
+  text-align: center;
+}
+.valoraciones
+{
+  padding: 1rem;
+  margin-top: 15px;
+}
+.valoraciones h6 {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.valoracion {
+  padding: 8px 0;
+  border-top: 1px solid #444;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+}
+.main-content h3
+{
+  text-align: center;
+}
+
+.services-container {
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+
+.service-card {
+  width: 100%;
+  padding: 1rem;
+  position: relative; /* Para que el usuario esté en una posición absoluta dentro de cada tarjeta */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera para mejorar el aspecto */
+}
+.requests-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+mat-list {
+  margin: 0;
+}
+
+mat-list-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+}
+
+mat-progress-spinner {
+  display: block;
+  margin: 16px auto;
+}
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #52381c; /* Marrón Oscuro */
+  color: #fff;
+}

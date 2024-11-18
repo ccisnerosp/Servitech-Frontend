@@ -1,0 +1,95 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2E24;
+  padding: 1rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Añadido z-index alto */
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+/* Body */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E5C199;
+}
+/*Payment Details*/
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: #E5C199;
+}
+
+.details-card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.payment-card {
+  background-color: #f1f8e9;
+  border: 1px solid #c5e1a5;
+  padding: 1rem;
+}
+
+.payment-card mat-card-title {
+  color: #388e3c;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #f44336;
+}
+
+.note mat-icon {
+  margin-right: 0.5rem;
+}
+

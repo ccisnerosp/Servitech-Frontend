@@ -1,0 +1,105 @@
+<header class="header">
+  <div class="logo">
+    <img src="assets\logo.png" alt="ServiTech Logo" class="logo">
+  </div>
+  <!-- <div class="admin-info">
+    <span>Administrador</span>
+  </div> -->
+</header>
+<body>
+
+  <div class="profile-container">
+  <div class="left-buttons">
+    <button mat-icon-button aria-label="Volver al panel" class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="panel-title">Mi Cuenta</span>
+  </div>
+  <!-- Información del Técnico -->
+  <mat-card class="card-section">
+    <mat-card-header>
+      <mat-card-title>Información del Técnico</mat-card-title>
+      <button mat-icon-button color="#444" (click)="toggleEditMode()">
+        <mat-icon>{{ editMode.tecnico ? 'save' : 'edit' }}</mat-icon>
+      </button>
+      <button *ngIf="editMode.tecnico" mat-icon-button color="warn" (click)="cancelEdit()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="tech-info">
+        <div class="info-row">
+          <span class="label">Especialidad:</span>
+          <span *ngIf="!editMode.tecnico">{{ tecnico.especialidad }}</span>
+          <input *ngIf="editMode.tecnico" matInput [(ngModel)]="tecnico.especialidad" placeholder="Especialidad">
+        </div>
+        <div class="info-row">
+          <span class="label">Descripción:</span>
+          <span *ngIf="!editMode.tecnico">{{ tecnico.descripcion }}</span>
+          <textarea *ngIf="editMode.tecnico" matInput [(ngModel)]="tecnico.descripcion" placeholder="Descripción"></textarea>
+        </div>
+        <div class="info-row">
+          <span class="label">Horario:</span>
+          <span *ngIf="!editMode.tecnico">{{ tecnico.horario }}</span>
+          <input *ngIf="editMode.tecnico" matInput [(ngModel)]="tecnico.horario" placeholder="Horario">
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Información del Usuario -->
+  <mat-card class="card-section">
+    <mat-card-header>
+      <mat-card-title>Información del Usuario</mat-card-title>
+      <button mat-icon-button color="#444" (click)="toggleEditUserMode()">
+        <mat-icon>{{ editMode.usuario ? 'save' : 'edit' }}</mat-icon>
+      </button>
+      <button *ngIf="editMode.usuario" mat-icon-button color="warn" (click)="cancelUserEdit()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="user-info">
+        <div class="info-row">
+          <span class="label">Nombres:</span>
+          <span *ngIf="!editMode.usuario">{{ usuario.nombres }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.nombres " placeholder="Nombres">
+        </div>
+        <div class="info-row">
+          <span class="label">Apellidos:</span>
+          <span *ngIf="!editMode.usuario">{{ usuario.apellidos }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.apellidos " placeholder="Apellidos">
+        </div>
+        <div class="info-row">
+          <span class="label">Teléfono: </span>
+          <span *ngIf="!editMode.usuario">{{ usuario.telefono }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.telefono " placeholder="Teléfono">
+        </div>
+        <div class="info-row">
+          <span class="label">Dirección: </span>
+          <span *ngIf="!editMode.usuario">{{ usuario.direccion }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.direccion " placeholder="Dirección">
+        </div>
+        <div class="info-row">
+          <span class="label">Username: </span>
+          <span *ngIf="!editMode.usuario">{{ usuario.username }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.username " placeholder="Username">
+        </div>
+        <div class="info-row">
+          <span class="label">Correo: </span>
+          <span *ngIf="!editMode.usuario">{{ usuario.correo }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.correo " placeholder="Correo">
+        </div>
+        <div class="info-row">
+          <span class="label">Password: </span>
+          <span *ngIf="!editMode.usuario">{{ "* * * * * * * *" }}</span>
+          <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.password" placeholder="Password">
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+</body>
+

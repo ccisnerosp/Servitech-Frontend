@@ -1,0 +1,76 @@
+<div class="navbar">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon1">person</mat-icon>
+    <div class="user-dropdown">
+      <button>Account</button>
+      <button>Requests</button>
+      <button>Ratings</button>
+      <button>Logout</button>
+    </div>
+  </div>
+</div>
+<body>
+<div class="profile-container">
+  <aside class="sidebar">
+    <div class="user-icon2">
+      <mat-icon class="user-icon2">account_circle</mat-icon>
+    </div>
+    <div class="technician-info">
+      <p><strong>{{ tecnico?.usuario?.nombres }} {{ tecnico?.usuario?.apellidos }}</strong></p>
+      <p>{{ tecnico?.especialidad }}</p>
+      <p><strong>Descripción: </strong>"{{ tecnico?.descripcion }}"</p>
+      <p><strong>Horario: </strong> {{ tecnico?.horario }}</p>
+    </div>
+    <div class="valoraciones">
+      <h6>Valoraciones</h6>
+      <div *ngFor="let valoracion of valoraciones" class="valoracion">
+        <p><strong>Usuario:</strong> {{ valoracion.cliente?.usuario?.username }}</p>
+        <p><strong>Comentario:</strong> {{ valoracion.comentario }}</p>
+        <p><strong>Calificación:</strong> {{ valoracion.calificacion }}</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h3>{{ tecnico?.usuario?.username }}'s Services</h3>
+    <div class="services-container">
+      <mat-card *ngFor="let servicio of servicios" class="service-card">
+        <mat-card-header>
+          <mat-card-title>{{ servicio.nombre }}</mat-card-title>
+          <mat-card-subtitle>{{ servicio.tipo }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ servicio.descripcion }}</p>
+          <p><strong>Costo:</strong> {{ servicio.costo }}</p>
+          <p><strong>Estado:</strong> {{ servicio.estado }}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary" (click)="toggleRequests(servicio.id)">
+            View Requests
+          </button>
+        </mat-card-actions>
+
+        <!-- Contenedor de solicitudes -->
+        <div *ngIf="expandedServiceId === servicio.id" class="requests-container">
+          <mat-progress-spinner *ngIf="loadingRequests" diameter="30" mode="indeterminate"></mat-progress-spinner>
+          <div *ngIf="!loadingRequests && solicitudes.length === 0">
+            <p>No hay solicitudes para este servicio.</p>
+          </div>
+          <div *ngIf="!loadingRequests && solicitudes.length > 0">
+            <mat-list>
+              <mat-list-item *ngFor="let solicitud of solicitudes">
+                <p><strong>Fecha:</strong> {{ solicitud.fechaSolicitud }} <strong> Cliente:</strong> {{ solicitud.cliente?.usuario?.username }}</p>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </main>
+</div>
+
+</body>
+<footer class="footer">
+  <p>En Servitech, encontrarás a los mejores para lo que necesites.</p>
+</footer>

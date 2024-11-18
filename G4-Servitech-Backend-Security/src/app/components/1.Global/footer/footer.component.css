@@ -1,0 +1,77 @@
+/* ========== FOOTER STYLE ========== */
+/* Añade un margen en la parte superior del footer */
+footer {
+  background-color: #3C2E24;
+  color: #E5C199;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  font-weight: normal; /* Título sin negrita */
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Dos columnas */
+  gap: 5px 20px; /* Ajuste del espacio entre las columnas */
+  font-family: 'Montserrat', sans-serif; /* Fuente para los enlaces de redes sociales */
+  justify-content: center; /* Centra el contenido */
+}
+
+.footer-icons a {
+  color: #FFFFFF;
+  font-size: 1rem; /* Tamaño de fuente similar a la fecha de creación */
+  transition: color 0.3s;
+  text-align: center;
+  position: relative;
+}
+
+
+.footer-icons a:hover {
+  color: #CFA049; /* Color de hover para los iconos */
+}
+
+.footer-bottom {
+  border-top: 1px solid #FFFFFF;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Separación entre enlaces y copyright */
+}
+
+.footer-bottom a {
+  color: #FFFFFF; /* Color blanco para enlaces de Políticas y Términos */
+}
+
+

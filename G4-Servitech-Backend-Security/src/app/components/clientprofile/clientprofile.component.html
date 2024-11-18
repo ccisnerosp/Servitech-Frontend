@@ -1,0 +1,73 @@
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(cliente?.id)" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(cliente.id)">Account</button>
+      <button (click)="goToMyRequests(cliente.id)">Requests</button>
+      <button (click)="goToMyRatings(cliente.id)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<body>
+<div class="profile-container">
+  <div class="left-buttons">
+    <button mat-icon-button class="back-button" (click)="goBack(cliente.id)">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="panel-title">Volver</span>
+  </div>
+<mat-card class="card-section">
+  <mat-card-header>
+    <mat-card-title>Mi cuenta</mat-card-title>
+    <button mat-icon-button color="primary" (click)="toggleEditUserMode()">
+      <mat-icon>{{ editMode.usuario ? 'save' : 'edit' }}</mat-icon>
+    </button>
+    <button *ngIf="editMode.usuario" mat-icon-button color="warn" (click)="cancelUserEdit()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="user-info">
+      <div class="info-row">
+        <span class="label">Nombres:</span>
+        <span *ngIf="!editMode.usuario">{{ usuario.nombres }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.nombres " placeholder="Nombres">
+      </div>
+      <div class="info-row">
+        <span class="label">Apellidos:</span>
+        <span *ngIf="!editMode.usuario">{{ usuario.apellidos }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.apellidos " placeholder="Apellidos">
+      </div>
+      <div class="info-row">
+        <span class="label">Teléfono: </span>
+        <span *ngIf="!editMode.usuario">{{ usuario.telefono }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.telefono " placeholder="Teléfono">
+      </div>
+      <div class="info-row">
+        <span class="label">Dirección: </span>
+        <span *ngIf="!editMode.usuario">{{ usuario.direccion }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.direccion " placeholder="Dirección">
+      </div>
+      <div class="info-row">
+        <span class="label">Username: </span>
+        <span *ngIf="!editMode.usuario">{{ usuario.username }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.username " placeholder="Username">
+      </div>
+      <div class="info-row">
+        <span class="label">Correo: </span>
+        <span *ngIf="!editMode.usuario">{{ usuario.correo }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.correo " placeholder="Correo">
+      </div>
+      <div class="info-row">
+        <span class="label">Password: </span>
+        <span *ngIf="!editMode.usuario">{{ usuario.password }}</span>
+        <input *ngIf="editMode.usuario" matInput [(ngModel)]="usuario.password" placeholder="Password">
+      </div>
+
+    </div>
+  </mat-card-content>
+</mat-card>
+</div>
+</body>

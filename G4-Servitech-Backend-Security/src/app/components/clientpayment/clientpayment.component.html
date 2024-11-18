@@ -1,0 +1,69 @@
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(solicitud.cliente?.id)" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(solicitud.cliente?.id)">Account</button>
+      <button (click)="goToMyRequests(solicitud.cliente?.id)">Requests</button>
+      <button (click)="goToMyRatings(solicitud.cliente?.id)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<body>
+<div class="payment-container">
+  <mat-card class="details-card">
+    <mat-card-header>
+      <mat-card-title>Detalles del Servicio</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Servicio:</strong> {{ solicitud.servicio?.nombre }}</p>
+      <p><strong>Descripción:</strong> {{ solicitud.servicio?.descripcion }}</p>
+      <p><strong>Tipo:</strong> {{ solicitud.servicio?.tipo }}</p>
+      <p><strong>Costo:</strong> S/ {{ solicitud.servicio?.costo }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="details-card">
+    <mat-card-header>
+      <mat-card-title>Datos del Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Nombre:</strong> {{ solicitud.cliente?.usuario?.nombres }} {{ solicitud.cliente?.usuario?.apellidos }}</p>
+      <p><strong>Correo:</strong> {{ solicitud.cliente?.usuario?.correo }}</p>
+      <p><strong>Teléfono:</strong> {{ solicitud.cliente?.usuario?.telefono }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="details-card">
+    <mat-card-header>
+      <mat-card-title>Datos de la Solicitud</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Fecha de Solicitud:</strong> {{ solicitud.fechaSolicitud  }}</p>
+      <p><strong>Estado:</strong> {{ solicitud.estado }}</p>
+      <p><strong>Descripción del Problema:</strong> {{ solicitud.descripcionProblema }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="payment-card">
+    <mat-card-header>
+      <mat-card-title>Realizar Pago</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Puede realizar el pago a través de:
+        <strong>Yape</strong> o <strong>Plin</strong>.
+      </p>
+      <p>
+        <strong>Teléfono del Técnico:</strong>
+        {{ solicitud.servicio?.tecnico?.usuario?.telefono }}
+      </p>
+      <p class="note">
+        <mat-icon color="warn">info</mat-icon> El pago debe ser validado por el técnico.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <button mat-raised-button color="primary" (click)="goBack(solicitud.cliente?.id)"> Volver al Menú Principal</button>
+</div>
+</body>

@@ -1,0 +1,53 @@
+<body>
+<div class="navbar">
+  <img src="assets/logo.png" (click)="goToMenu(clienteId)" alt="Logo" class="logo">
+  <div class="user-menu">
+    <mat-icon class="user-icon">person</mat-icon>
+    <div class="user-dropdown">
+      <button (click)="goToMyAccount(clienteId)">Account</button>
+      <button (click)="goToMyRequests(clienteId)">Requests</button>
+      <button (click)="goToMyRatings(clienteId)">Ratings</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="servicio" class="service-request-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ servicio.nombre }}</mat-card-title>
+      <mat-card-subtitle>Tipo: {{ servicio.tipo }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Descripción:</strong> {{ servicio.descripcion }}</p>
+      <p><strong>Costo:</strong> {{ servicio.costo}}</p>
+      <p><strong>Estado:</strong> {{ servicio.estado }}</p>
+      <p><strong>Técnico:</strong> {{ servicio.tecnico?.usuario?.username }}</p>
+      <form [formGroup]="solicitudForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Solicitud</mat-label>
+          <input matInput [matDatepicker]="picker3" formControlName="fechaSolicitud" required>
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Descripción del Problema</mat-label>
+          <textarea matInput formControlName="descripcionProblema"></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openDialog()">
+        Confirm Request
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="!servicio" class="loading">
+  <p>Cargando información del servicio...</p>
+</div>
+<footer class="footer">
+  <p>Recuerda detallar bien cuál es tu problema para poder solucionarlo exitosamente. </p>
+</footer>
+</body>

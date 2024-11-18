@@ -1,0 +1,98 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2E24;
+  padding: 1rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.user-icon1 {
+  font-size: 30px;
+  color: #444;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Añadido z-index alto */
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+body {
+  background-color: #e8c8a3; /* Marrón Claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+.service-request-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+.servicerequest-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.solicitud-form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #52381c; /* Marrón Oscuro */
+  color: #fff;
+}

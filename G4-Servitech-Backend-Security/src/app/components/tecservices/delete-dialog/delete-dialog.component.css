@@ -1,0 +1,9 @@
+/* Opcional: estilos personalizados para el diálogo */
+mat-dialog-content {
+  font-size: 1rem;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,153 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: #F0CCA1;
+  color: #3c2e24;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* ========== HEADER ========== */
+header {
+  background-color: #3C2E24;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+
+header .logo {
+  width: 100px; /* Tamaño del logo reducido */
+}
+
+header nav {
+  display: flex;
+  gap: 20px; /* Espaciado uniforme entre los elementos de navegación */
+  margin-right: 8px;
+}
+
+header nav a,
+.auth-buttons button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 8px 15px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+header nav a:hover,
+.auth-buttons button:hover {
+  background-color: #CFA049; /* Color de hover */
+  color: #3C2E24; /* Cambia el color del texto para mayor contraste */
+  border-color: #CFA049; /* Cambia el borde para que coincida con el color de fondo en hover */
+}
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Container for Date Form and Table */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Date Form */
+.date-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 45%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #3c2e24;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #cfa049;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+th {
+  background-color: #3c2e24;
+  color: #000000;
+}
+
+td {
+  color: #3c2e24;
+}
+
+tr:nth-child(even) {
+  background-color: #f0cca1;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .date-form {
+    flex-direction: column;
+  }
+
+  mat-form-field, button[type="submit"] {
+    width: 100%;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+  }
+}
